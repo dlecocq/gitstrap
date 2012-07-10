@@ -23,6 +23,23 @@ should order their names lexigoraphically.
 It also supports downloading __any tarball__ that has a bunch of shell scripts. 
 Or if a __single uncompressed script__ is more your style, that's possible, too.
 
+Example
+=======
+By way of an example, I created a [gist](https://gist.github.com/3085130) for 
+building hypertable (I was having a lot of trouble with this before). In it, I 
+have a number of files like `0-dependencies.sh` or `3-bdb.sh`, and these are 
+each shell scripts and executed in order when I say:
+
+    # If I don't have gitstrap installed locally
+    gs_url='https://raw.github.com/dlecocq/gitstrap/master/gitstrap.sh'
+    curl -s $gs_url | bash -s - https://gist.github.com/3085130
+    
+    # Alternatively,
+    gitstrap.sh https://gist.github.com/3085130
+
+This downloads the packaged tarball gists locally, unpacks it, and run each of 
+the scripts contained therein.
+
 Using on EC2
 ============
 EC2 instances can be started with user data. Interestingly enough, this user 
