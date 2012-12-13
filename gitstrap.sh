@@ -25,7 +25,7 @@ function update_f {
 function gistify_f {
     if [[ "$1" == *gist.github.com* ]] ; then
         local url="`echo $1 | \
-            sed 's/\(.*\.com\)\/\(.*\)/\1\/gists\/\2\/download/'`"
+            sed 's/\(.*\.com\)\/\(.*\)/\1\/\2\/download/'`"
         # 'https://gist.github.com/X' needs to become
         # 'https://gist.github.com/gists/X/download'
         echo $url
